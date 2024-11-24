@@ -1,0 +1,18 @@
+<configuration>
+    <!-- Appender for logging to a text file -->
+    <appender name="FILTER_LOG" class="ch.qos.logback.core.FileAppender">
+        <file>logs/filter-logs.txt</file> <!-- Path to your log file -->
+        <append>true</append> <!-- Append to the file rather than overwriting -->
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} : %msg%n</pattern> <!-- Log format -->
+        </encoder>
+    </appender>
+
+    <!-- Configure logger for the LoggingFilter class -->
+    <logger name="com.example.ServletFilter.filter.LoggingFilter" level="INFO" additivity="false">
+        <appender-ref ref="FILTER_LOG"/>
+    </logger>
+
+    <!-- Optional: Root logger -->
+    <root level="OFF"/>
+</configuration>

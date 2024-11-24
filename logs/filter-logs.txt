@@ -1,0 +1,6 @@
+2024-11-24 13:32:21 : Initializing Logging Filter
+2024-11-24 13:47:57 : Initializing Logging Filter
+2024-11-24 13:48:04 : Request URI : /api
+2024-11-24 13:48:04 : Request Method: GET
+2024-11-24 13:48:04 : Client IP : 0:0:0:0:0:0:0:1
+2024-11-24 13:48:04 : Response sent for URI: /api

@@ -1,0 +1,13 @@
+logging:
+  level:
+    root: off                        # Turn off all logs by default
+    com.example.ServletFilter.filter.LoggingFilter: info  # Enable INFO level logs only for the LoggingFilter
+  file:
+    name: logs/application.log
+    max-size: 10MB
+    total-size-cap: 100MB
+    max-history: 10
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} : %msg%n"  # Simplify log format to show only the message
+
+
