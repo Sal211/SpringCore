@@ -1,3 +1,6 @@
 ecom:
   server:
     url: http://localhost:8080/ABC
+
+file:
+  url: http://localhost:8080/api

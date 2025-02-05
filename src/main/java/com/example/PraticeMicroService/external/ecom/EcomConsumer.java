@@ -1,4 +1,4 @@
-package com.example.PraticeMicroService.external;
+package com.example.PraticeMicroService.external.ecom;
 
 import com.example.PraticeMicroService.dtos.BaseResponse;
 import org.springframework.beans.factory.annotation.Autowired;

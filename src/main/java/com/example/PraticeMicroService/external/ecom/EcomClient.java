@@ -1,8 +1,5 @@
-package com.example.PraticeMicroService.external;
+package com.example.PraticeMicroService.external.ecom;
 
-import com.example.PraticeMicroService.dtos.BaseResponse;
-import com.example.PraticeMicroService.dtos.OrderProductDto;
-import lombok.Getter;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.*;
 
