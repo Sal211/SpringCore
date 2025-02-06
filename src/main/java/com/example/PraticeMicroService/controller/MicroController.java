@@ -3,13 +3,15 @@ package com.example.PraticeMicroService.controller;
 import com.example.PraticeMicroService.dtos.BaseResponse;
 import com.example.PraticeMicroService.external.ecom.EcomConsumer;
 import com.example.PraticeMicroService.external.file.FileClientConsumer;
+import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.multipart.support.StandardMultipartHttpServletRequest;
 
 @RestController
 @RequestMapping("/ecom")
-public class EcomController {
+public class MicroController {
 
     @Autowired
     private EcomConsumer ecomConsumer;
@@ -30,5 +32,13 @@ public class EcomController {
     @PostMapping("/uploadFile")
     public String uploadFile(MultipartFile file, Long id) {
         return fileClientConsumer.uploadFile(file, id);
+    }
+
+    @PostMapping("/uploadImg")
+    public String uploadFile(HttpServletRequest httpServletRequest) {
+        var getMultipart = ((StandardMultipartHttpServletRequest) httpServletRequest).getMultiFileMap();
+        MultipartFile file = getMultipart.getFirst("file");
+        String id = httpServletRequest.getParameter("id");
+        return fileClientConsumer.uploadFile(file, Long.valueOf(id));
     }
 }
